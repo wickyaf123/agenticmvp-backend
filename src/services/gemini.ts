@@ -1,14 +1,21 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+
+async function generate(prompt: string): Promise<string> {
+  const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: prompt,
+  });
+  const text = response.text || "";
+  return text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+}
 
 export async function generateSolutionContent(
   industry: string,
   slug: string,
   existingSlugs: { solutions: string[]; useCases: string[]; agents: string[] }
 ): Promise<string> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
   const prompt = `Generate a JSON object for an AI agency website page about "AI Agents for ${industry}".
 
 The JSON must match this exact structure:
@@ -55,10 +62,7 @@ Rules:
 - metaDescription must be exactly 150-160 characters
 - Return ONLY valid JSON, no markdown, no code fences`;
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
-  // Strip any markdown code fences
-  return text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+  return generate(prompt);
 }
 
 export async function generateUseCaseContent(
@@ -66,8 +70,6 @@ export async function generateUseCaseContent(
   slug: string,
   existingSlugs: { solutions: string[]; useCases: string[]; agents: string[] }
 ): Promise<string> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
   const prompt = `Generate a JSON object for an AI agency website page about "AI ${functionName} Automation".
 
 The JSON must match this exact structure:
@@ -106,9 +108,7 @@ The JSON must match this exact structure:
 
 Return ONLY valid JSON, no markdown, no code fences.`;
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
-  return text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+  return generate(prompt);
 }
 
 export async function generateBlogContent(
@@ -116,8 +116,6 @@ export async function generateBlogContent(
   slug: string,
   existingSlugs: { solutions: string[]; useCases: string[]; agents: string[] }
 ): Promise<string> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
   const prompt = `Generate a JSON object for a blog post about "${topic}" for an AI agency that builds AI agents.
 
 The JSON must match this exact structure:
@@ -137,7 +135,5 @@ The JSON must match this exact structure:
 The content should be genuinely informative, not marketing fluff.
 Return ONLY valid JSON, no markdown, no code fences.`;
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
-  return text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+  return generate(prompt);
 }
