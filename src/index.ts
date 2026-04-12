@@ -115,7 +115,7 @@ cron.schedule("0 */48 * * *", async () => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`AgenticMVP Backend running on port ${PORT}`);
+app.listen(Number(PORT), "0.0.0.0", () => {
+  console.log(`AgenticMVP Backend running on 0.0.0.0:${PORT}`);
   console.log("Cron: Content generation every 48 hours");
 });
