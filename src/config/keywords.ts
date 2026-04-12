@@ -1,0 +1,63 @@
+// New page topics to generate - the pipeline picks from these
+// Each batch, it generates pages for topics not yet in the repo
+
+export const SOLUTION_TOPICS: { industry: string; slug: string }[] = [
+  // Already generated (20):
+  // healthcare, real-estate, ecommerce, finance, legal, saas, insurance, logistics,
+  // education, recruiting, marketing, customer-support, manufacturing, accounting,
+  // hospitality, construction, automotive, pharma, retail, consulting
+
+  // New topics to generate:
+  { industry: "Telecommunications", slug: "telecommunications" },
+  { industry: "Energy & Utilities", slug: "energy-utilities" },
+  { industry: "Agriculture", slug: "agriculture" },
+  { industry: "Media & Entertainment", slug: "media-entertainment" },
+  { industry: "Non-Profit", slug: "non-profit" },
+  { industry: "Government", slug: "government" },
+  { industry: "Cybersecurity", slug: "cybersecurity" },
+  { industry: "Travel & Tourism", slug: "travel-tourism" },
+  { industry: "Food & Beverage", slug: "food-beverage" },
+  { industry: "Sports & Fitness", slug: "sports-fitness" },
+  { industry: "Beauty & Wellness", slug: "beauty-wellness" },
+  { industry: "Pet Care", slug: "pet-care" },
+  { industry: "Cleaning Services", slug: "cleaning-services" },
+  { industry: "Event Management", slug: "event-management" },
+  { industry: "Interior Design", slug: "interior-design" },
+  { industry: "Architecture", slug: "architecture" },
+  { industry: "Dental", slug: "dental" },
+  { industry: "Veterinary", slug: "veterinary" },
+  { industry: "Supply Chain", slug: "supply-chain" },
+  { industry: "Staffing Agencies", slug: "staffing-agencies" },
+];
+
+export const USE_CASE_TOPICS: { functionName: string; slug: string }[] = [
+  // New topics:
+  { functionName: "Contract Review", slug: "ai-contract-review" },
+  { functionName: "Competitor Monitoring", slug: "ai-competitor-monitoring" },
+  { functionName: "Price Optimization", slug: "ai-price-optimization" },
+  { functionName: "Churn Prediction", slug: "ai-churn-prediction" },
+  { functionName: "Fraud Detection", slug: "ai-fraud-detection" },
+  { functionName: "Sentiment Analysis", slug: "ai-sentiment-analysis" },
+  { functionName: "Meeting Scheduling", slug: "ai-meeting-scheduling" },
+  { functionName: "Resume Screening", slug: "ai-resume-screening" },
+  { functionName: "Quality Assurance", slug: "ai-quality-assurance" },
+  { functionName: "Expense Management", slug: "ai-expense-management" },
+  { functionName: "Knowledge Base", slug: "ai-knowledge-base-automation" },
+  { functionName: "Order Tracking", slug: "ai-order-tracking" },
+  { functionName: "Return Processing", slug: "ai-return-processing" },
+  { functionName: "Compliance Monitoring", slug: "ai-compliance-monitoring" },
+  { functionName: "Proposal Writing", slug: "ai-proposal-writing" },
+];
+
+export const BLOG_TOPICS: { title: string; slug: string }[] = [
+  { title: "10 Signs Your Business Needs AI Agents in 2025", slug: "signs-your-business-needs-ai-agents" },
+  { title: "How to Choose the Right AI Agent for Your Business", slug: "how-to-choose-ai-agent" },
+  { title: "AI Agents for Small Business: A Practical Guide", slug: "ai-agents-for-small-business" },
+  { title: "The ROI of AI Agents: Real Numbers from Real Businesses", slug: "roi-of-ai-agents" },
+  { title: "AI Agents vs RPA: Which Automation Is Right for You?", slug: "ai-agents-vs-rpa" },
+  { title: "Building an AI-First Company: Lessons from the Trenches", slug: "building-ai-first-company" },
+  { title: "The Complete Guide to AI Customer Support in 2025", slug: "guide-ai-customer-support" },
+  { title: "How AI Agents Are Replacing Traditional SaaS Tools", slug: "ai-agents-replacing-saas" },
+  { title: "AI Agent Security: What You Need to Know", slug: "ai-agent-security" },
+  { title: "From Idea to MVP in 7 Days with AI Agents", slug: "idea-to-mvp-with-ai-agents" },
+];
