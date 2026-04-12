@@ -13,8 +13,8 @@ app.use(express.json());
 // CORS — allow frontend origins
 app.use((_req, res, next) => {
   const allowedOrigins = [
-    "https://agenticmvpasap.io",
-    "https://www.agenticmvpasap.io",
+    "https://agenticmvp.dev",
+    "https://www.agenticmvp.dev",
     "https://agenticmvp.vercel.app",
     "http://localhost:3000",
     "http://localhost:3001",
@@ -53,8 +53,8 @@ app.post("/api/onboard", async (req, res) => {
 
     // Send notification email via Resend
     await resend.emails.send({
-      from: "AgenticMVP <onboarding@agenticmvpasap.io>",
-      to: ["TEAM@AGENTICMVPASAP.IO"],
+      from: "AgenticMVP <onboarding@agenticmvp.dev>",
+      to: ["team@agenticmvp.dev"],
       subject: `New Lead: ${name} — ${source || "Website"}`,
       html: `
         <h2>New Onboarding Submission</h2>
@@ -73,7 +73,7 @@ app.post("/api/onboard", async (req, res) => {
 
     // Send confirmation email to user
     await resend.emails.send({
-      from: "AgenticMVP <hello@agenticmvpasap.io>",
+      from: "AgenticMVP <hello@agenticmvp.dev>",
       to: [email],
       subject: "We got your submission — let's build!",
       html: `
