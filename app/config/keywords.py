@@ -52,4 +52,5 @@ BLOG_TOPICS = [
     {"title": "How AI Agents Are Replacing Traditional SaaS Tools", "slug": "ai-agents-replacing-saas"},
     {"title": "AI Agent Security: What You Need to Know", "slug": "ai-agent-security"},
     {"title": "From Idea to MVP in 7 Days with AI Agents", "slug": "idea-to-mvp-with-ai-agents"},
+    {"title": "How to Measure AI Agent Performance: Metrics That Matter", "slug": "measuring-ai-agent-performance"},
 ]
