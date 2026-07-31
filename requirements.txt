@@ -1,0 +1,41 @@
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic[email]==2.9.2
+python-dotenv==1.0.1
+httpx==0.27.2
+google-genai==0.3.0
+anthropic==0.120.2
+supabase==2.9.1
+PyGithub==2.4.0
+resend==2.4.0
+
+# Orchestrator core
+langgraph==0.2.55
+langgraph-checkpoint-postgres==2.0.7
+langchain-core==0.3.21
+langchain-google-genai==2.0.5
+langsmith==0.1.147
+psycopg[binary,pool]==3.2.3
+
+# Memory
+mem0ai==0.1.32
+
+# Worker queue
+redis==5.2.0
+rq==1.16.2
+
+# Reliability
+tenacity==9.0.0
+pybreaker==1.2.0
+
+# Social SDKs (kept light at Phase 0; deepened per slice)
+praw==7.8.1
+instagrapi==2.1.3
+apify-client==1.8.1
+
+# Compliance / telephony helpers
+phonenumbers==8.13.50
+pytz==2024.2
+
+# Crypto for OAuth token storage
+cryptography==43.0.3

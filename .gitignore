@@ -1,4 +1,12 @@
-node_modules
-dist
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
 .env
 .env.local
+.DS_Store
+node_modules/
+dist/
